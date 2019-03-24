@@ -6,7 +6,7 @@
             v-for="todo in allTodos" :key="todo.id" 
             v-bind:class="{'is-complete': todo.completed}"
             class="todo"
-            @click="updateTodo(todo)"
+            @dblclick="updateTodo(todo)"
             >
                {{todo.title}}
             <i class="fas fa-trash-alt" @click="deleteTodo(todo.id)"></i>
@@ -58,6 +58,12 @@ export default {
       right: 10px;
       color: #fff;
       cursor: pointer;
+  }
+
+  @media (max-width: 500px){
+      .todos {
+          grid-template-columns: 1fr;
+      }
   }
 </style>
 
